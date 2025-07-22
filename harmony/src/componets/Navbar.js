@@ -12,6 +12,10 @@ function Navbar() {
         setIsMenuOpen(false);
     };
 
+
+// Then add to a link:
+
+
     return (
         <nav className="navbar">
             <div className="navbar-container">

@@ -95,6 +95,7 @@
 
 .hamburger-line.active:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
+  background-color: #e74c3c;
 }
 
 .hamburger-line.active:nth-child(2) {
@@ -181,16 +182,16 @@
 .mobile-menu-link:hover {
   color: #e74c3c;
 }
-
+/* 
 .about-link,
 .career-link {
   color: #e74c3c;
-}
+} */
 
-.about-link:hover,
+/* .about-link:hover,
 .career-link:hover {
   color: #c0392b;
-}
+} */
 
 /* Overlay */
 .menu-overlay {
