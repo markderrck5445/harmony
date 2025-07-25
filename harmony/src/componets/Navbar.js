@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import pic1 from '../img/pic1.jpg'; // Assuming pic1 is in the img folder
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,8 +19,8 @@ function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                {/* Logo */}
                 <div className="navbar-logo">
+                    <img src={pic1} alt="Hero" />
                     <h2></h2>
                 </div>
 
@@ -61,13 +61,13 @@ function Navbar() {
                         <Link to="/" className="mobile-menu-link" onClick={closeMenu}>Home</Link>
                     </li>
                     <li className="mobile-menu-item">
-                        <Link to="/about" className="mobile-menu-link about-link" onClick={closeMenu}>About</Link>
+                        <Link to="/about" className="mobile-menu-link" onClick={closeMenu}>About</Link>
                     </li>
                     <li className="mobile-menu-item">
                         <Link to="/products" className="mobile-menu-link" onClick={closeMenu}>Beauty Products</Link>
                     </li>
                     <li className="mobile-menu-item">
-                        <Link to="/contact" className="mobile-menu-link" onClick={closeMenu}>Contact us</Link>
+                        <Link to="/contact" className="mobile-menu-link" onClick={closeMenu}>Contact</Link>
                     </li>
                 </ul>
             </div>
