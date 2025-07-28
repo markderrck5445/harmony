@@ -1,5 +1,5 @@
 import React from 'react';
-import pic1 from '../img/pic1.jpg'; // Assuming pic2 is in the img folder
+import pic3 from '../img/pic3.jpg'; // Assuming pic2 is in the img folder
 function Home() {
     // const products = [
     //     {
@@ -46,9 +46,9 @@ function Home() {
                 </button>
               </div>
 
-              {/* <div className="hero-image">
-              <img src={pic1} alt="Hero" className="hero-img" />
-              </div> */}
+              <div className="hero-image">
+              <img src={pic3} alt="Hero" className="hero-img" />
+              </div>
 
             </div>
           </div>

@@ -709,6 +709,180 @@
     }
 }
 
+/* Hero Image Styles - Production Ready & Responsive */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 300px;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  margin-top: 50px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.hero-img:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading state optimization */
+.hero-img {
+  background-color: #f0f0f0;
+  background-image: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.hero-img[src] {
+  background: none;
+  animation: none;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Desktop styles (default - image on right) */
+@media (min-width: 768px) {
+  .hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: row;
+  }
+  
+  .hero-text {
+    flex: 1;
+    order: 1;
+  }
+  
+  .hero-image {
+    flex: 1;
+    order: 2;
+    max-width: 50%;
+  }
+  
+  .hero-img {
+    max-width: 600px;
+    min-height: 400px;
+  }
+}
+
+/* Large desktop optimization */
+@media (min-width: 1200px) {
+  .hero-image {
+    padding-left: 2rem;
+  }
+  
+  .hero-img {
+    max-width: 700px;
+    min-height: 500px;
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 767px) and (min-width: 481px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .hero-text {
+    order: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    order: 2;
+    padding: 0 1rem;
+    min-height: 250px;
+  }
+  
+  .hero-img {
+    max-width: 400px;
+    min-height: 250px;
+  }
+}
+
+/* Mobile styles (image at bottom) */
+@media (max-width: 480px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .hero-text {
+    order: 1;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .hero-image {
+    order: 2;
+    padding: 0 1rem;
+    min-height: 200px;
+  }
+  
+  .hero-img {
+    max-width: 100%;
+    min-height: 200px;
+    border-radius: 8px;
+  }
+  
+  .hero-img:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+}
+
+/* Performance optimizations */
+.hero-img {
+  /* Improve image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  /* GPU acceleration for smooth animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  
+  /* Prevent layout shifts */
+  aspect-ratio: 4/3;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .hero-img {
+    transition: none;
+    animation: none;
+  }
+  
+  .hero-img:hover {
+    transform: none;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero-content {
